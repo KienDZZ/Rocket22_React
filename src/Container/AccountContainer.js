@@ -7,6 +7,16 @@ function AccountContainer(props) {
     <Container>
       <CreateButton />
       <ResultForm
+        title="Danh Sách Account"
+        h1="ID"
+        h2="Email"
+        h3="Username"
+        h4="Fullname"
+        h5="Department"
+        h6="Position"
+        h7="Create Date"
+        h8="Edit"
+        h9="Delete"
       />
     </Container>
   );
