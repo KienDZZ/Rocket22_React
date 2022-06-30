@@ -1,16 +1,18 @@
-import React, { useState } from "react";
-import {Button, Container} from "reactstrap"
-import NewAccountForm from "./NewAccountForm";
+import React from "react";
+import { Button, Container } from "reactstrap";
+
 function CreateButton(props) {
-  const [isShown, setIsShown] = useState(false);
-  
-  const handleClick = event => {
-    setIsShown(current => !current);
+  let { onHandleCreateButtuon } = props;
+  // Hàm xử lý khi click vào nút CreateNewAccount
+  let handleCreateNewAccount = () => {
+    onHandleCreateButtuon();
   };
+
   return (
     <Container>
-      <Button color="primary" onClick={handleClick}>Create Account</Button>
-      {isShown && <NewAccountForm />}
+      <Button color="primary" onClick={handleCreateNewAccount}>
+        Create Account
+      </Button>
     </Container>
   );
 }
