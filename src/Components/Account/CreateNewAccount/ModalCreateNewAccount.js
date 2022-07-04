@@ -11,7 +11,7 @@ import {
 import InputForm from "./InputForm";
 
 function ModalCreateNewAccount(props) {
-  let { showForm, onCloseModal } = props;
+  let { showForm, onCloseModal, onHandleCreateNewAccount } = props;
   let isClose = () => {
     onCloseModal();
   };
@@ -20,7 +20,7 @@ function ModalCreateNewAccount(props) {
       <br />
       <Modal isOpen={showForm}>
         <ModalHeader>
-          <h5>
+          <p>
             Create New Account
             <svg
               onClick={isClose}
@@ -32,10 +32,10 @@ function ModalCreateNewAccount(props) {
             >
               <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" />
             </svg>
-          </h5>
+          </p>
         </ModalHeader>
         <ModalBody>
-          <InputForm />
+          <InputForm onHandleCreateNewAccount={onHandleCreateNewAccount} />
         </ModalBody>
         <ModalFooter>
           <Button color="danger" onClick={isClose}>

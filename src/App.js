@@ -1,11 +1,13 @@
 import "./App.css";
-import AccountPage from "./Page/AccountPage";
+import Menu from "./Components/Menu/menu";
+import { route } from "./Components/Routes/route";
 
 function App() {
   return (
-      <div className="App">
-        <AccountPage />
-      </div>
+    <div className="App">
+      <Menu/>
+      {route}
+    </div>
   );
 }
 

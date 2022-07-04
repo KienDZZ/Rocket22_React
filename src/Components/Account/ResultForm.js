@@ -2,9 +2,10 @@ import React from "react";
 import { Container, Table} from "reactstrap"
 import ResultFormItem from "./ResultFormItem";
 function ResultForm(props) {
+  let {danhSach} = props;
   return (
     <Container>
-     <h2>{props.title}</h2>
+     <h2>Danh Sach Account</h2>
       <Table>
         <thead>
           <tr>
@@ -20,13 +21,7 @@ function ResultForm(props) {
           </tr>
         </thead>
         <tbody>
-          <ResultFormItem/>
-          <ResultFormItem/>
-          <ResultFormItem/>
-          <ResultFormItem/>
-          <ResultFormItem/>
-          <ResultFormItem/>
-          <ResultFormItem/>
+        <ResultFormItem danhSach={danhSach}/>
         </tbody>
       </Table>
     </Container>

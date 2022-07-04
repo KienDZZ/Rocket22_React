@@ -1,23 +1,32 @@
 import React from "react";
 import { Button } from "reactstrap";
 function ResultFormItem(props) {
-  return (
-    <tr>
-      <td className="text-center">1</td>
-      <td>kien.letrung@gmail.com</td>
-      <td className="text-center">KienDz</td>
-      <td className="text-center">Le Trung Kien</td>
-      <td className="text-center">D8</td>
-      <td className="text-center">Intern</td>
-      <td className="text-center">28/06/2022</td>
-      <td className="text-center">
-        <Button color="warning">Edit</Button>
-      </td>
-      <td className="text-center">
-        <Button color="danger">Delete</Button>
-      </td>
-    </tr>
-  );
+  let { danhSach } = props;
+  let items = "";
+  if(danhSach){
+    items = danhSach.map((account, index) => {
+      return (
+        <tr key={index}>
+          <td className="text-center">{account.id}</td>
+          <td>{account.email}</td>
+          <td className="text-center">{account.username}</td>
+          <td className="text-center">{account.fullname}</td>
+          <td className="text-center">{account.department}</td>
+          <td className="text-center">{account.position}</td>
+          <td className="text-center">{account.createDate}</td>
+          <td className="text-center">
+            <Button color="warning">Edit</Button>
+          </td>
+          <td className="text-center">
+            <Button color="danger">Delete</Button>
+          </td>
+        </tr>
+      )
+    }
+  )};
+  return items;
 }
+
+
 
 export default ResultFormItem;
